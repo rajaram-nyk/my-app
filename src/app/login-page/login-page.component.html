@@ -1,0 +1,20 @@
+<div *ngIf="!submitted">
+    <form>
+        <label for="username">UserName</label>
+        <input type="text" #username> <br><br>
+        <label for="password">Password</label>
+        <input type="password" #password><br><br>
+        <button role="button" (click)="onSubmit(username.value,password.value)">login</button>
+    </form>
+</div>
+<div *ngIf="submitted">
+    <div *ngIf="isAuthonticate;else errorMsg">
+        <p>welcome to page</p>
+        <button role="button" (click)="submitted=false">log out</button>
+    </div>
+    <ng-template #errorMsg>
+        <p>username is incorrect</p>
+        <button role="button" (click)="submitted=false">go back</button>
+    </ng-template>
+
+</div>
