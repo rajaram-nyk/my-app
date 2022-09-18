@@ -13,7 +13,7 @@
         <button role="button" (click)="submitted=false">log out</button>
     </div>
     <ng-template #errorMsg>
-        <p>username is incorrect</p>
+        <p *appRepeat="5">username is incorrect</p>
         <button role="button" (click)="submitted=false">go back</button>
     </ng-template>
 
